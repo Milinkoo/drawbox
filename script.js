@@ -57,15 +57,13 @@ function stop(event) {
 }
 
 function getX(event) {
-  return event.pageX
-    ? event.pageX - canvas.offsetLeft
-    : event.targetTouches[0].pageX - canvas.offsetLeft;
+  const rect = canvas.getBoundingClientRect();
+  return (event.clientX || event.touches[0].clientX) - rect.left;
 }
 
 function getY(event) {
-  return event.pageY
-    ? event.pageY - canvas.offsetTop
-    : event.targetTouches[0].pageY - canvas.offsetTop;
+  const rect = canvas.getBoundingClientRect();
+  return (event.clientY || event.touches[0].clientY) - rect.top;
 }
 
 canvas.addEventListener("touchstart", start, false);
