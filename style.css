@@ -4,3 +4,8 @@
   font-weight: normal;
   font-style: normal;
 }
+
+body {
+  color: black;
+  font-family: 'w95fa', Verdana, sans-serif;
+}
